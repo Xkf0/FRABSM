@@ -1,0 +1,14 @@
+pytorch-lightning==1.9.4
+tqdm
+bcolz-zipline
+prettytable
+menpo
+mxnet
+opencv-python
+fsspec
+pyyaml
+scikit-learn
+wandb
+scikit-image
+numpy==1.23.2
+scipy==1.8
