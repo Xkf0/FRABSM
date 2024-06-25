@@ -25,6 +25,7 @@ class DataModule(pl.LightningDataModule):
         self.low_res_augmentation_prob = kwargs['low_res_augmentation_prob']
         self.crop_augmentation_prob = kwargs['crop_augmentation_prob']
         self.photometric_augmentation_prob = kwargs['photometric_augmentation_prob']
+        self.photometric_augmentation_prob = kwargs['jitter_augmentation_prob']
         self.swap_color_channel = kwargs['swap_color_channel']
         self.use_mxrecord = kwargs['use_mxrecord']
 

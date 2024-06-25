@@ -8,9 +8,10 @@ python main.py \
     --arch ir_18 \
     --batch_size 256 \
     --num_workers 16 \
-    --low_res_augmentation_prob 0.2 \
-    --crop_augmentation_prob 0.2 \
-    --photometric_augmentation_prob 0.2 \
+    --low_res_augmentation_prob 0.15 \
+    --crop_augmentation_prob 0.15 \
+    --photometric_augmentation_prob 0.15 \
+    --jitter_augmentation_prob 0.15 \
     --gpus 1 \
     --epochs 30 \
     --lr_milestones 12,20,24 \

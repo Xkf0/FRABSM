@@ -66,9 +66,10 @@ def add_task_arguments(parser):
     parser.add_argument('--alpha', default=1.0, type=float)
     parser.add_argument('--p_0', default=0.6, type=float)
 
-    parser.add_argument('--low_res_augmentation_prob', default=0.2, type=float)
-    parser.add_argument('--crop_augmentation_prob', default=0.2, type=float)
-    parser.add_argument('--photometric_augmentation_prob', default=0.2, type=float)
+    parser.add_argument('--low_res_augmentation_prob', default=0.15, type=float)
+    parser.add_argument('--crop_augmentation_prob', default=0.15, type=float)
+    parser.add_argument('--photometric_augmentation_prob', default=0.15, type=float)
+    parser.add_argument('--jitter_augmentation_prob', default=0.15, type=float)
 
     parser.add_argument('--accumulate_grad_batches', type=int, default=1)
     parser.add_argument('--test_run', action='store_true')
