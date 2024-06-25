@@ -41,9 +41,9 @@ For using pretrained SMAFace model for inference,
 python inference.py
 ```
 
-|                             img1                              |                              img2                              |                              img3                              |
-|:-------------------------------------------------------------:|:--------------------------------------------------------------:|:--------------------------------------------------------------:|
-| <img height="130" src="face_alignment/test_images/img1.jpeg" width="130"/> | <img height="130" src="face_alignment/test_images/img2.jpeg" width="130"/> | <img height="130" src="face_alignment/test_images/img3.jpeg" width="130"/> |
+|                                   img1                                    |                                   img2                                    |                                   img3                                    |
+|:-------------------------------------------------------------------------:|:-------------------------------------------------------------------------:|:-------------------------------------------------------------------------:|
+| <img height="130" src="face_alignment/test_images/img1.jpg" width="130"/> | <img height="130" src="face_alignment/test_images/img2.jpg" width="130"/> | <img height="130" src="face_alignment/test_images/img3.jpg" width="130"/> |
 
 The similarity score result should be 
 ```
