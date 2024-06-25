@@ -18,6 +18,7 @@ class CustomImageFolderDataset(datasets.ImageFolder):
                  low_res_augmentation_prob=0.0,
                  crop_augmentation_prob=0.0,
                  photometric_augmentation_prob=0.0,
+                 jitter_augmentation_prob=0.0,
                  swap_color_channel=False,
                  output_dir='./',
                  ):
@@ -28,7 +29,7 @@ class CustomImageFolderDataset(datasets.ImageFolder):
                                                        loader=loader,
                                                        is_valid_file=is_valid_file)
         self.root = root
-        self.augmenter = Augmenter(crop_augmentation_prob, photometric_augmentation_prob, low_res_augmentation_prob)
+        self.augmenter = Augmenter(crop_augmentation_prob, photometric_augmentation_prob, low_res_augmentation_prob, jitter_augmentation_prob)
         self.swap_color_channel = swap_color_channel
         self.output_dir = output_dir  # for checking the sanity of input images
 

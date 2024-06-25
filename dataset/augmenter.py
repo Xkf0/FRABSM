@@ -7,34 +7,16 @@ from torchvision import transforms
 
 class Augmenter():
 
-    def __init__(self, crop_augmentation_prob, photometric_augmentation_prob, low_res_augmentation_prob):
+    def __init__(self, crop_augmentation_prob, photometric_augmentation_prob, low_res_augmentation_prob, jitter_augmentation_prob):
         self.crop_augmentation_prob = crop_augmentation_prob
         self.photometric_augmentation_prob = photometric_augmentation_prob
         self.low_res_augmentation_prob = low_res_augmentation_prob
+        self.jitter_augmentation_prob = jitter_augmentation_prob
 
         self.random_resized_crop = transforms.RandomResizedCrop(size=(112, 112),
                                                                 scale=(0.2, 1.0),
                                                                 ratio=(0.75, 1.3333333333333333))
         self.photometric = transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0)
-
-    def augment(self, sample):
-
-        # crop with zero padding augmentation
-        if np.random.random() < self.crop_augmentation_prob:
-            # RandomResizedCrop augmentation
-            sample, crop_ratio = self.crop_augment(sample)
-
-        # low resolution augmentation
-        if np.random.random() < self.low_res_augmentation_prob:
-            # low res augmentation
-            img_np, resize_ratio = self.low_res_augmentation(np.array(sample))
-            sample = Image.fromarray(img_np.astype(np.uint8))
-
-        # photometric augmentation
-        if np.random.random() < self.photometric_augmentation_prob:
-            sample = self.photometric_augmentation(sample)
-
-        return sample
 
     def crop_augment(self, sample):
         new = np.zeros_like(np.array(sample))
@@ -47,7 +29,7 @@ class Augmenter():
                                                          self.random_resized_crop.scale,
                                                          self.random_resized_crop.ratio)
         cropped = F.crop(sample, i, j, h, w)
-        new[i:i+h,j:j+w, :] = np.array(cropped)
+        new[i:i + h, j:j + w, :] = np.array(cropped)
         sample = Image.fromarray(new.astype(np.uint8))
         crop_ratio = min(h, w) / max(orig_H, orig_W)
         return sample, crop_ratio
@@ -77,5 +59,33 @@ class Augmenter():
                 sample = F.adjust_contrast(sample, contrast_factor)
             elif fn_id == 2 and saturation_factor is not None:
                 sample = F.adjust_saturation(sample, saturation_factor)
+
+        return sample
+
+    def jitter_image(self, img, brightness_factor=0.2):
+        # Jitter the image brightness
+        img_array = np.array(img)
+        jittered_img_array = np.uint8(img_array * (1 + np.random.uniform(-brightness_factor, brightness_factor)))
+        jittered_img = Image.fromarray(jittered_img_array)
+        return jittered_img
+
+    def augment(self, sample):
+
+        # crop with zero padding augmentation
+        if np.random.random() < self.crop_augmentation_prob:
+            sample, crop_ratio = self.crop_augment(sample)
+
+        # low resolution augmentation
+        if np.random.random() < self.low_res_augmentation_prob:
+            img_np, resize_ratio = self.low_res_augmentation(np.array(sample))
+            sample = Image.fromarray(img_np.astype(np.uint8))
+
+        # photometric augmentation
+        if np.random.random() < self.photometric_augmentation_prob:
+            sample = self.photometric_augmentation(sample)
+
+        # jitter augmentation
+        if np.random.random() < self.jitter_augmentation_prob:
+            sample = self.jitter_image(sample)
 
         return sample
