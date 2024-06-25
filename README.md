@@ -47,9 +47,9 @@ python inference.py
 
 The similarity score result should be 
 ```
-tensor([[ 1.0000,  0.5478,  0.0594],
-        [ 0.5478,  1.0000, -0.0158],
-        [ 0.0594, -0.0158,  1.0000]], grad_fn=<MmBackward0>)
+tensor([[ 1.0000,  0.5357,  0.0398],
+        [ 0.5357,  1.0000,  0.0898],
+        [ 0.0398,  0.0898,  1.0000]], grad_fn=<MmBackward0>)
 ```
 
 # Validation
