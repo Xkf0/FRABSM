@@ -16,9 +16,9 @@ pip install -r requirements.txt
 
 # Pretrained Models
 
-| Arch | Dataset       | Method   | Link                                                                                             |
-|------|---------------|----------|--------------------------------------------------------------------------------------------------|
-| R50  | MS1MV2        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-SLwrT7hP-aQazPchJTTTjq6crEZRUlX/view?usp=sharing)                                                                                       |
+| Arch | Dataset       | Method   | Link              |
+|------|---------------|----------|-------------------|
+| R50  | MS1MV2        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-SLwrT7hP-aQazPchJTTTjq6crEZRUlX/view?usp=sharing)     |
 | R100 | MS1MV2        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-EPympkzOEuDuFkHqf5PFQzscDPZIKzO/view?usp=sharing)     |
 | R100 | MS1MV2        | NSMAFace | [gdrive](https://drive.google.com/file/d/1-K25VMKqQw4zsqM_vnyLjD8-gBuMpc-j/view?usp=sharing)     |
 | R100 | MS1MV3        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-BRRYGs8ZuqY80gwhQQQ6y65bbCLZUYU/view?usp=sharing)     |
