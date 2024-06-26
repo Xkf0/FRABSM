@@ -7,7 +7,7 @@ import torch
 from PIL import Image
 import pandas as pd
 import cv2
-from .augmenter_nochange import Augmenter
+from .augmenter import Augmenter
 
 
 class BaseMXDataset(Dataset):
