@@ -207,8 +207,8 @@ def verification(data_root, dataset_name, img_input_feats, save_path):
 
 def load_pretrained_model(model_name='ir50'):
     # load model and pretrained statedict
-    ckpt_path = smaface_models[model_name][0]
-    arch = smaface_models[model_name][1]
+    ckpt_path = frabsm_models[model_name][0]
+    arch = frabsm_models[model_name][1]
 
     model = net.build_model(arch)
     statedict = torch.load(ckpt_path)['state_dict']
@@ -237,18 +237,18 @@ if __name__ == '__main__':
     print('use_flip_test', args.use_flip_test)
     print('fusion_method', args.fusion_method)
 
-    smaface_models = {
-    	'ir18_ms1mv2': ["../experiments/ir18_ms1mv2_smaface/.ckpt", 'ir_18'],
-        'ir18_webface4m': ["../experiments/ir18_webface4m_smaface/.ckpt", 'ir_18'],
-        'ir50_webface4m': ["../experiments/ir50_webface4m_smaface/.ckpt", 'ir_50'],
-        'ir50_ms1mv2': ["../experiments/ir50_ms1mv2_smaface/.ckpt", 'ir_50'],
-        'ir50_ms1mv3': ["../experiments/ir50_ms1mv3_smaface/.ckpt", 'ir_50'],
-        'ir101_ms1mv2': ["../experiments/ir101_ms1mv2_smaface/.ckpt", 'ir_101'],
-        'ir101_ms1mv3': ["../experiments/ir101_ms1mv3_smaface/.ckpt", 'ir_101'],
-        'ir101_webface4m': ["../experiments/ir101_webface4m_smaface/.ckpt", 'ir_101'],
-        'ir101_webface12m': ["../experiments/ir101_webface12m_smaface/.ckpt", 'ir_101'],
+    frabsm_models = {
+    	'ir18_ms1mv2': ["../experiments/ir18_ms1mv2_frabsm/.ckpt", 'ir_18'],
+        'ir18_webface4m': ["../experiments/ir18_webface4m_frabsm/.ckpt", 'ir_18'],
+        'ir50_webface4m': ["../experiments/ir50_webface4m_frabsm/.ckpt", 'ir_50'],
+        'ir50_ms1mv2': ["../experiments/ir50_ms1mv2_frabsm/.ckpt", 'ir_50'],
+        'ir50_ms1mv3': ["../experiments/ir50_ms1mv3_frabsm/.ckpt", 'ir_50'],
+        'ir101_ms1mv2': ["../experiments/ir101_ms1mv2_frabsm/.ckpt", 'ir_101'],
+        'ir101_ms1mv3': ["../experiments/ir101_ms1mv3_frabsm/.ckpt", 'ir_101'],
+        'ir101_webface4m': ["../experiments/ir101_webface4m_frabsm/.ckpt", 'ir_101'],
+        'ir101_webface12m': ["../experiments/ir101_webface12m_frabsm/.ckpt", 'ir_101'],
     }
-    assert args.model_name in smaface_models
+    assert args.model_name in frabsm_models
     save_path = './result/{}/{}'.format(args.dataset_name, args.model_name)
     print('result save_path', save_path)
     os.makedirs(save_path, exist_ok=True)

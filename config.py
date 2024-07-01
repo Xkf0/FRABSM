@@ -58,7 +58,7 @@ def add_task_arguments(parser):
     parser.add_argument('--momentum', default=0.9, type=float, metavar='M')
     parser.add_argument('--weight_decay', default=1e-4, type=float)
 
-    parser.add_argument('--head', default='smaface', type=str)
+    parser.add_argument('--head', default='frabsm', type=str)
     parser.add_argument('--m', default=0.4, type=float)
     parser.add_argument('--h', default=0.33, type=float)
     parser.add_argument('--s', type=float, default=64.0)

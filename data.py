@@ -75,7 +75,7 @@ class DataModule(pl.LightningDataModule):
                                                )
 
             if 'faces_emore' in self.train_data_path and self.train_data_subset:
-                # subset ms1mv2 dataset for reproducing the same setup in SmaFace ablation experiments.
+                # subset ms1mv2 dataset for reproducing the same setup in FRABSM ablation experiments.
                 with open('../assets/ms1mv2_train_subset_index.txt', 'r') as f:
                     subset_index = [int(i) for i in f.read().split(',')]
                     self.subset_ms1mv2_dataset(subset_index)

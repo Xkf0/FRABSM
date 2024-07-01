@@ -1,12 +1,12 @@
-# SMAFace: Sample Mining Guided Adaptive Loss for Face Recognition
+# FRABSM: Sample Mining Guided Adaptive Loss for Face Recognition
 
-Github repository for SMAFace: Sample Mining Guided Adaptive Loss for Face Recognition.
+Github repository for FRABSM: A Robust Face Recognition Model based Sample Mining and Loss Functions.
 
 # Installation
 
 ```
-conda create --name smaface python=3.8.13 pytorch==1.13.1 torchvision cudatoolkit=11.7 -c pytorch
-conda activate smaface
+conda create --name FRABSM python=3.8.13 pytorch==1.13.1 torchvision cudatoolkit=11.7 -c pytorch
+conda activate FRABSM
 conda install scikit-image matplotlib pandas scikit-learn 
 pip install -r requirements.txt
 ```
@@ -18,14 +18,14 @@ pip install -r requirements.txt
 
 | Arch | Dataset       | Method   | Link              |
 |------|---------------|----------|-------------------|
-| R50  | MS1MV2        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-SLwrT7hP-aQazPchJTTTjq6crEZRUlX/view?usp=sharing)     |
-| R100 | MS1MV2        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-EPympkzOEuDuFkHqf5PFQzscDPZIKzO/view?usp=sharing)     |
-| R100 | MS1MV2        | NSMAFace | [gdrive](https://drive.google.com/file/d/1-K25VMKqQw4zsqM_vnyLjD8-gBuMpc-j/view?usp=sharing)     |
-| R100 | MS1MV3        | SMAFace  | [gdrive](https://drive.google.com/file/d/1-BRRYGs8ZuqY80gwhQQQ6y65bbCLZUYU/view?usp=sharing)     |
-| R100 | MS1MV3        | NSMAFace | [gdrive](https://drive.google.com/file/d/1-C2g1Z2VlY0LJQDMuT8Wl7bDI6QjMacF/view?usp=sharing)     |
-| R100 | WebFace4M     | SMAFace  | [gdrive](https://drive.google.com/file/d/1bEGuCK78RxB4IcG-kcxantdRkCvNmWRJ/view?usp=sharing)     |
-| R100 | WebFace4M     | SMAFace* | [gdrive](https://drive.google.com/file/d/1--_CMVRK5uzTdHQ62-Dmf5xIe-e5SQD4/view?usp=sharing)     |
-| R100 | WebFace4M     | NSMAFace | [gdrive](https://drive.google.com/file/d/1-7zYVk-dI4dOd90NK8bH_F6EFszOCtm5/view?usp=sharing)     |
+| R50  | MS1MV2        | FRABSM  | [gdrive](https://drive.google.com/file/d/1-SLwrT7hP-aQazPchJTTTjq6crEZRUlX/view?usp=sharing)     |
+| R100 | MS1MV2        | FRABSM  | [gdrive](https://drive.google.com/file/d/1-EPympkzOEuDuFkHqf5PFQzscDPZIKzO/view?usp=sharing)     |
+| R100 | MS1MV2        | NFRABSM | [gdrive](https://drive.google.com/file/d/1-K25VMKqQw4zsqM_vnyLjD8-gBuMpc-j/view?usp=sharing)     |
+| R100 | MS1MV3        | FRABSM  | [gdrive](https://drive.google.com/file/d/1-BRRYGs8ZuqY80gwhQQQ6y65bbCLZUYU/view?usp=sharing)     |
+| R100 | MS1MV3        | NFRABSM | [gdrive](https://drive.google.com/file/d/1-C2g1Z2VlY0LJQDMuT8Wl7bDI6QjMacF/view?usp=sharing)     |
+| R100 | WebFace4M     | FRABSM  | [gdrive](https://drive.google.com/file/d/1bEGuCK78RxB4IcG-kcxantdRkCvNmWRJ/view?usp=sharing)     |
+| R100 | WebFace4M     | FRABSM* | [gdrive](https://drive.google.com/file/d/1--_CMVRK5uzTdHQ62-Dmf5xIe-e5SQD4/view?usp=sharing)     |
+| R100 | WebFace4M     | NFRABSM | [gdrive](https://drive.google.com/file/d/1-7zYVk-dI4dOd90NK8bH_F6EFszOCtm5/view?usp=sharing)     |
 
 
 # Inference
@@ -33,10 +33,10 @@ pip install -r requirements.txt
 ### Example using provided sample images
 
 We provide the code for performing the preprocessing step. 
-For using pretrained SMAFace model for inference, 
+For using pretrained FRABSM model for inference, 
 
-1. Download the pretrained smaface model, 
-2. For using pretrained SMAFace on below 3 images, run 
+1. Download the pretrained FRABSM model, 
+2. For using pretrained FRABSM on below 3 images, run 
 ```
 python inference.py
 ```

@@ -5,15 +5,15 @@ from face_alignment import align
 import numpy as np
 
 
-smaface_models = {
-    'ir_101':"./experiments/ir101_webface4m_smaface/.ckpt",
+frabsm_models = {
+    'ir_101':"./experiments/ir101_webface4m_frabsm/.ckpt",
 }
 
 def load_pretrained_model(architecture='ir_50'):
     # load model and pretrained statedict
-    assert architecture in smaface_models.keys()
+    assert architecture in frabsm_models.keys()
     model = net.build_model(architecture)
-    statedict = torch.load(smaface_models[architecture])['state_dict']
+    statedict = torch.load(frabsm_models[architecture])['state_dict']
     model_statedict = {key[6:]:val for key, val in statedict.items() if key.startswith('model.')}
     model.load_state_dict(model_statedict)
     model.eval()

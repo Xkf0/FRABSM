@@ -14,8 +14,8 @@ def build_head(head_type,
                p_0,
                ):
 
-    if head_type == 'smaface':
-        head = SmaFace(embedding_size=embedding_size,
+    if head_type == 'frabsm':
+        head = FRABSM(embedding_size=embedding_size,
                        classnum=class_num,
                        m=m,
                        h=h,
@@ -46,7 +46,7 @@ def l2_norm(input,axis=1):
     return output
 
 
-class SmaFace(Module):
+class FRABSM(Module):
     def __init__(self,
                  embedding_size=512,
                  classnum=70722,
@@ -57,7 +57,7 @@ class SmaFace(Module):
                  alpha=1.0,
                  p_0=0.5,
                  ):
-        super(SmaFace, self).__init__()
+        super(FRABSM, self).__init__()
         self.classnum = classnum
         self.kernel = Parameter(torch.Tensor(embedding_size,classnum))
 

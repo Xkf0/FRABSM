@@ -2,7 +2,7 @@ python main.py \
     --data_root '.' \
     --train_data_path webface4m \
     --val_data_path webface4m \
-    --prefix ir18_webface4m_smaface \
+    --prefix ir18_webface4m_frabsm \
     --use_wandb \
     --use_16bit \
     --arch ir_18 \
@@ -16,7 +16,7 @@ python main.py \
     --epochs 30 \
     --lr_milestones 12,20,24 \
     --lr 0.1 \
-    --head smaface \
+    --head frabsm \
     --m 0.4 \
     --h 0.333 \
     --alpha 1.0 \
