@@ -125,7 +125,7 @@ class FRABSM(Module):
         m_cos = torch.zeros(label.size()[0], cosine.size()[1], device=cosine.device)
         m_cos.scatter_(1, label.reshape(-1, 1), 1.0)
         g_add = self.m + (self.m * margin_scaler)
-        m_cos = m_cos * g_add
+        m_cos = m_cos * g_add * 0.7
         cosine = cosine - m_cos
 
         # scale
