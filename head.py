@@ -76,7 +76,7 @@ class FRABSM(Module):
         self.register_buffer('batch_mean', torch.ones(1)*(20))
         self.register_buffer('batch_std', torch.ones(1)*100)
 
-        print('\n\AdaFace with the following property')
+        print('\n\FRABSM with the following property')
         print('self.m', self.m)
         print('self.h', self.h)
         print('self.s', self.s)
