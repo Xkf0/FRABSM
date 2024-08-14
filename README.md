@@ -77,3 +77,20 @@ cd ..
 cd validation_tinyface
 python validate_tinyface.py --data_root . --model_name ir50_ms1mv2
 ```
+
+## Cite
+
+If you find this project useful in your research, please consider citing:
+
+```bibtex
+@article{RRABSM,
+title = {Robust face recognition model based sample mining and loss functions},
+journal = {Knowledge-Based Systems},
+pages = {112330},
+year = {2024},
+issn = {0950-7051},
+doi = {https://doi.org/10.1016/j.knosys.2024.112330},
+url = {https://www.sciencedirect.com/science/article/pii/S095070512400964X},
+author = {Yang Wang and Fan Xie and Chuanxin Zhao and Ao Wang and Chang Ma and Shijia Song and Zhenyu Yuan and Lijun Zhao}.
+}
+```
