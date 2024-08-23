@@ -86,6 +86,7 @@ If you find this project useful in your research, please consider citing:
 @article{RRABSM,
 title = {Robust face recognition model based sample mining and loss functions},
 journal = {Knowledge-Based Systems},
+volume = {302},
 pages = {112330},
 year = {2024},
 issn = {0950-7051},
