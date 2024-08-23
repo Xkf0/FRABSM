@@ -1,6 +1,6 @@
 # FRABSM: Robust Face Recognition Model Based Sample Mining and Loss Functions
 
-Github repository for https://www.sciencedirect.com/science/article/pii/S095070512400964X.
+Github repository for https://doi.org/10.1016/j.knosys.2024.112330.
 
 # Installation
 
